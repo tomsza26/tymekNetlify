@@ -1,5 +1,5 @@
 backend:
-  name: tymekNetlify
+  name: github
   repo: tomsza26/tymekNetlify
   branch: master
 
