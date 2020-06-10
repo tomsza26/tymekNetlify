@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/pages/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'blog-post',
+        }
+      - { label: 'Tytuł', name: 'title', widget: 'string' }
+      - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
+      - { label: 'Obrazek postu', name: 'featuredimage', widget: image }
+      - { label: 'Treść', name: 'body', widget: 'markdown' }
+      - { label: 'Tagi', name: 'tags', widget: 'list' }
+
+  - name: 'people'
+    label: 'Metamorfozy'
+    folder: 'src/pages/people'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'blog-post',
+        }
+      - { label: 'Imię i nazwisko', name: 'title', widget: 'string' }
+      - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
+      - { label: 'Opis', name: 'description', widget: 'text' }
+      - { label: 'Czas przemiany', name: 'transformTime', widget: 'text' }
+      - { label: 'Obraz przed', name: 'imageBefore', widget: image }
+      - { label: 'Obraz po', name: 'imageAfter', widget: image }
