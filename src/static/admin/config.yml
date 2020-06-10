@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: tymekNetlify
+  repo: tomsza26/tymekNetlify
   branch: master
 
 media_folder: static/img
