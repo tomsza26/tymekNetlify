@@ -6,6 +6,10 @@ $secondColor: #ccf381;
 $thirdColor: #f75019;
 $maxWidth: 2000px;
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-moz-selection {
   color: $thirdColor;
   background: $secondColor;

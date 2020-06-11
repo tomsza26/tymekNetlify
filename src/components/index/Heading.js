@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'gatsby';
 import smoothscroll from 'smoothscroll-polyfill';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import Logo from '../../images/LogoV1';
 
@@ -21,6 +22,8 @@ const Heading = () => {
       setHasRan(true);
       updateScreenSize();
     }
+    // eslint-disable-next-line global-require
+    require('smooth-scroll')('a[href*="#"]');
     window.addEventListener('resize', updateScreenSize);
     return () => {
       window.removeEventListener('resize', updateScreenSize);
@@ -95,18 +98,16 @@ const Heading = () => {
           </div>
           <Link
             className="b"
-            to={screenSize > 680 ? '/' : '/#headerImgContainer'}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
+            to={screenSize.width > 680 ? '/' : '/#headerImgContainer'}
+            activeStyle={{
+              background: '#4831d4',
+              color: '#ccf381',
+            }}
           >
             <div className="a">strona główna</div>
           </Link>
           <Link
-            to={screenSize > 680 ? '/oMnie' : '/oMnie#PMHeader'}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
+            to={screenSize.width > 680 ? '/oMnie' : '/oMnie#PMHeader'}
             className="b"
             activeStyle={{
               background: '#4831d4',
@@ -116,10 +117,7 @@ const Heading = () => {
             <div className="a">o mnie</div>
           </Link>
           <Link
-            to={screenSize > 680 ? '/blog' : '/blog#PMBlog'}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
+            to={screenSize.width > 680 ? '/blog' : '/blog#PMBlog'}
             className="b"
             activeStyle={{
               background: '#4831d4',
@@ -129,10 +127,7 @@ const Heading = () => {
             <div className="a">blog</div>
           </Link>
           <Link
-            to={screenSize > 680 ? '/metamorfozy' : '/metamorfozy#PMMeta'}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
+            to={screenSize.width > 680 ? '/metamorfozy' : '/metamorfozy#PMMeta'}
             className="b"
             activeStyle={{
               background: '#4831d4',
@@ -142,10 +137,7 @@ const Heading = () => {
             <div className="a">metamorfozy</div>
           </Link>
           <Link
-            to={screenSize > 680 ? '/wspolpraca' : '/wspolpraca#PMWspol'}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
+            to={screenSize.width > 680 ? '/wspolpraca' : '/wspolpraca#PMWspol'}
             className="b"
             activeStyle={{
               background: '#4831d4',

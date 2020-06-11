@@ -35,7 +35,7 @@ collections:
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'blog-post',
+          default: 'people',
         }
       - { label: 'Imię i nazwisko', name: 'title', widget: 'string' }
       - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
@@ -43,3 +43,36 @@ collections:
       - { label: 'Czas przemiany', name: 'transformTime', widget: 'text' }
       - { label: 'Obraz przed', name: 'imageBefore', widget: image }
       - { label: 'Obraz po', name: 'imageAfter', widget: image }
+
+  - name: 'oMnie'
+    label: 'O Mnie'
+    folder: 'src/pages/oMnie'
+    create: false
+    delete: false
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'oMnie',
+        }
+      - { label: 'Tytuł', name: 'Title', widget: 'string' }
+      - { label: 'Opis', name: 'Opis', widget: 'markdown' }
+
+  - name: 'Wspolpraca'
+    delete: false
+    label: 'Współpraca'
+    folder: 'src/pages/wspolpraca'
+    identifier_field: Title
+    create: false
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'wspolpraca',
+        }
+      - { label: 'Tytuł', name: 'Title', widget: 'string' }
+      - { label: 'Opis', name: 'Opis', widget: 'markdown' }
