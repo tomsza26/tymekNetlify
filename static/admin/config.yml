@@ -49,6 +49,7 @@ collections:
     folder: 'src/pages/oMnie'
     create: false
     delete: false
+    identifier_field: Title
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
