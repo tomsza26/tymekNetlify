@@ -23,11 +23,24 @@ collections:
       - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
       - { label: 'Obrazek postu', name: 'featuredimage', widget: image }
       - { label: 'Treść', name: 'body', widget: 'markdown' }
-      - { label: 'Tagi', name: 'tags', widget: 'list' }
+      - {
+          label: 'Kategoria',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              'DIETA',
+              'TRENING',
+              'CIEKAWOSTKI',
+              'JAK ZACZĄĆ?',
+              'ROZWÓJ OSOBISTY',
+              'PLANY TRENINGOWE',
+            ],
+        }
 
   - name: 'people'
     label: 'Metamorfozy'
-    folder: 'src/pages/people'
+    folder: 'src/pages/metamorfozy'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -46,7 +59,7 @@ collections:
 
   - name: 'oMnie'
     label: 'O Mnie'
-    folder: 'src/pages/oMnie'
+    folder: 'src/pages/o-mnie'
     create: false
     delete: false
     identifier_field: Title

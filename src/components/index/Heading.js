@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import smoothscroll from 'smoothscroll-polyfill';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import Logo from '../../images/LogoV1';
+import Logo from '../../assets/img/LogoV1';
 
 const Heading = () => {
   const [containerName, setContainerName] = useState('container');
@@ -107,7 +106,7 @@ const Heading = () => {
             <div className="a">strona główna</div>
           </Link>
           <Link
-            to={screenSize.width > 680 ? '/oMnie' : '/oMnie#PMHeader'}
+            to={screenSize.width > 680 ? '/o-mnie' : '/o-mnie#PMHeader'}
             className="b"
             activeStyle={{
               background: '#4831d4',

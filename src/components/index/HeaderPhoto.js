@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NewMain from '../../images/newMain1.png';
+import NewMain from '../../assets/img/newMain1.png';
 
 function HeaderPhoto() {
   return (

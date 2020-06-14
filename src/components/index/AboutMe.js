@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import AboutMeJpg from '../../images/aboutMeCircle.png';
+import AboutMeJpg from '../../assets/img/aboutMeCircle.png';
 
 function AboutMe() {
   return (

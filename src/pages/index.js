@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Index from '../components/index/index';
 import OMnie from '../components/pg/PoMnie';
 import Metamorfozy from '../components/pg/Pmetamorfozy';
-import Wspolpraca from '../components/pg/Pwspolpraca';
+import Wspolpraca from './wspolpraca';
 import Pblog from '../components/pg/Pblog';
 
 export default function index() {
@@ -13,7 +13,7 @@ export default function index() {
     <Layout>
       <Router>
         <Index path="/" />
-        <OMnie path="oMnie" />
+        <OMnie path="o-mnie" />
         <Wspolpraca path="wspolpraca" />
         <Metamorfozy path="metamorfozy" />
         <Pblog path="blog" />

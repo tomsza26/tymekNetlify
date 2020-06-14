@@ -5,7 +5,7 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import Header from '../components/index/Heading';
+import Header from './index/Heading';
 import Footer from './index/Footer';
 
 import useSiteMetadata from './SiteMetadata';
