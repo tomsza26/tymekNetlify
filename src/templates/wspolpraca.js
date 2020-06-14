@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 
 function Pwspolpraca({ data }) {
   const { html } = data.markdownRemark;
-  console.log(html);
   return (
     <>
       <Helmet title="Współpraca - Pakuj z Tymkiem" />
