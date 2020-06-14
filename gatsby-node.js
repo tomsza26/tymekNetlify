@@ -33,7 +33,6 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach((edge) => {
       const { id } = edge.node;
-
       let slugi = edge.node.fields.slug;
 
       if (slugi.substring(0, 6) === '/blog/') {

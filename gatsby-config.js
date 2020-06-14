@@ -5,6 +5,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    // {
+    //   resolve: 'gatsby-plugin-layout',
+    //   options: {
+    //     path: 'src/components/layout.js',
+    //   },
+    // },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',

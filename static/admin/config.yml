@@ -52,7 +52,7 @@ collections:
         }
       - { label: 'Imię i nazwisko', name: 'title', widget: 'string' }
       - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
-      - { label: 'Opis', name: 'description', widget: 'text' }
+      - { label: 'Opis', name: 'body', widget: 'text' }
       - { label: 'Czas przemiany', name: 'transformTime', widget: 'text' }
       - { label: 'Obraz przed', name: 'imageBefore', widget: image }
       - { label: 'Obraz po', name: 'imageAfter', widget: image }
@@ -72,7 +72,7 @@ collections:
           default: 'oMnie',
         }
       - { label: 'Tytuł', name: 'Title', widget: 'string' }
-      - { label: 'Opis', name: 'Opis', widget: 'markdown' }
+      - { label: 'Opis', name: 'body', widget: 'markdown' }
 
   - name: 'Wspolpraca'
     delete: false
@@ -80,7 +80,7 @@ collections:
     folder: 'src/pages/wspolpraca'
     identifier_field: Title
     create: false
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     fields:
       - {
           label: 'Template Key',
@@ -89,4 +89,4 @@ collections:
           default: 'wspolpraca',
         }
       - { label: 'Tytuł', name: 'Title', widget: 'string' }
-      - { label: 'Opis', name: 'Opis', widget: 'markdown' }
+      - { label: 'Opis', name: 'body', widget: 'markdown' }

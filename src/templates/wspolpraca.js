@@ -1,8 +1,10 @@
 import React from 'react';
-
 import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 
-function Pwspolpraca() {
+function Pwspolpraca({ data }) {
+  const { html } = data.markdownRemark;
+  console.log(html);
   return (
     <>
       <Helmet title="Współpraca - Pakuj z Tymkiem" />
@@ -21,9 +23,8 @@ function Pwspolpraca() {
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-once="true"
-          >
-            opis
-          </div>
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
         </div>
       </div>
     </>
@@ -31,3 +32,11 @@ function Pwspolpraca() {
 }
 
 export default Pwspolpraca;
+
+export const postQuery = graphql`
+  query IndexPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "wspolpraca" } }) {
+      html
+    }
+  }
+`;
