@@ -35,6 +35,8 @@ exports.createPages = ({ actions, graphql }) => {
       const { id } = edge.node;
       let slugi = edge.node.fields.slug;
 
+      console.log(slugi);
+
       if (slugi.substring(0, 6) === '/blog/') {
         const kebab = _.kebabCase(edge.node.frontmatter.category);
         slugi = `/blog/${kebab}/${slugi.slice(6)}`;

@@ -20,7 +20,13 @@ collections:
           default: 'blog-post',
         }
       - { label: 'Tytuł', name: 'title', widget: 'string' }
-      - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Data publikacji',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'DD.MM.YYYY',
+          timeFormat: false,
+        }
       - { label: 'Obrazek postu', name: 'featuredimage', widget: image }
       - { label: 'Treść', name: 'body', widget: 'markdown' }
       - {
@@ -53,6 +59,13 @@ collections:
       - { label: 'Imię i nazwisko', name: 'title', widget: 'string' }
       - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
       - { label: 'Opis', name: 'body', widget: 'text' }
+      - {
+          label: 'Osiągnięto',
+          name: 'achieved',
+          widget: text,
+          dateFormat: 'DD.MM.YYYY',
+          timeFormat: false,
+        }
       - { label: 'Czas przemiany', name: 'transformTime', widget: 'text' }
       - { label: 'Obraz przed', name: 'imageBefore', widget: image }
       - { label: 'Obraz po', name: 'imageAfter', widget: image }
