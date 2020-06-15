@@ -35,6 +35,9 @@ exports.createPages = ({ actions, graphql }) => {
       const { id } = edge.node;
       let slugi = edge.node.fields.slug;
 
+      if (slugi.substring(0, 13) === '/metamorfozy/') {
+        return;
+      }
       console.log(slugi);
 
       if (slugi.substring(0, 6) === '/blog/') {

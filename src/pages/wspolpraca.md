@@ -1,6 +1,6 @@
 ---
 templateKey: wspolpraca
-Title: Współpraca
+title: Współpraca
 ---
 
 Potrzebujesz planu treningowego stworzonego według twoich potrzeb? A może spersonalizowanej diety? Czy po prostu jesteś na początku przygody ze zdrowym stylem życia i nie wiesz jak się do tego zabrać?

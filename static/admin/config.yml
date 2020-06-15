@@ -72,25 +72,25 @@ collections:
 
   - name: 'oMnie'
     label: 'O Mnie'
-    folder: 'src/pages/o-mnie'
+    folder: 'src/pages'
     create: false
     delete: false
     identifier_field: Title
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     fields:
       - {
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'oMnie',
+          default: 'o-mnie',
         }
-      - { label: 'Tytuł', name: 'Title', widget: 'string' }
+      - { label: 'Tytuł', name: 'title', widget: 'string' }
       - { label: 'Opis', name: 'body', widget: 'markdown' }
 
   - name: 'Wspolpraca'
     delete: false
     label: 'Współpraca'
-    folder: 'src/pages/wspolpraca'
+    folder: 'src/pages'
     identifier_field: Title
     create: false
     slug: '{{slug}}'
@@ -101,5 +101,5 @@ collections:
           widget: 'hidden',
           default: 'wspolpraca',
         }
-      - { label: 'Tytuł', name: 'Title', widget: 'string' }
+      - { label: 'Tytuł', name: 'title', widget: 'string' }
       - { label: 'Opis', name: 'body', widget: 'markdown' }
