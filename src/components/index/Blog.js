@@ -5,82 +5,74 @@ import {
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
+import { kebabCase } from 'lodash';
 
-function Blog() {
-  const shorten = (str, maxLen, separator = ' ') => {
-    if (str.length <= maxLen) return str;
-    return `${str.substr(0, str.lastIndexOf(separator, maxLen))}...`;
-  };
+import shorten from '../../assets/functions/shorten';
 
-  // let blog = articles
-  //   .sort(function (a, b) {
-  //     return b.id - a.id;
-  //   })
-  //   .slice(0, 3)
-  //   .map((data, index) => {
-  //     const cate = data.kategoria
-  //       .replace(/\s+/g, '_')
-  //       .replace('ą', 'a')
-  //       .replace('ć', 'c')
-  //       .replace('ó', 'o')
-  //       .replace(/[^\w\s]/gi, '')
-  //       .toLowerCase();
+function Blog(props) {
+  const { nodes } = props.threeArticles;
 
-  //     return (
-  //       <Link
-  //         to={`/blog/${cate}/${data.id}#navContainer`}
-  //         key={index}
-  //         className="blogArs"
-  //         id={`hel${index}`}
-  //       >
-  //         <div className="blogArticle">
-  //           <div className="blogArticleCategory">{data.kategoria}</div>
-  //           <div className="blogArticleHeader">{data.nazwa}</div>
-  //           <div className="blogArticleContent">{shorten(data.tekst, 300)}</div>
-  //           <div className="blogArticleDate">
-  //             <FontAwesomeIcon icon={faCalendarAlt} /> {data.data}
-  //             <FontAwesomeIcon icon={faExternalLinkAlt} />
-  //           </div>
-  //         </div>
-  //       </Link>
-  //     );
-  //   });
+  const blog = nodes.map((d, i) => {
+    const { category, date, title } = d.frontmatter;
+    let slug = d.fields.slug;
+    const kebab = kebabCase(d.frontmatter.category);
+    slug = `/blog/${kebab}/${slug.slice(6)}`;
 
-  // let blog2 = articles
-  //   .sort(function (a, b) {
-  //     return b.id - a.id;
-  //   })
-  //   .slice(1, 3)
-  //   .map((data, index) => {
-  //     const cate = data.kategoria
-  //       .replace(/\s+/g, '_')
-  //       .replace('ą', 'a')
-  //       .replace('ć', 'c')
-  //       .replace('ó', 'o')
-  //       .replace(/[^\w\s]/gi, '')
-  //       .toLowerCase();
+    const text = shorten(d.html, 300);
 
-  //     return (
-  //       <Link
-  //         to={`/blog/${cate}/${data.id}#navContainer`}
-  //         key={index}
-  //         className="blogArs"
-  //         id={`helRes${index}`}
-  //       >
-  //         <div className="blogArticle">
-  //           <div className="blogArticleCategory">{data.kategoria}</div>
-  //           <div className="blogArticleHeader">{data.nazwa}</div>
-  //           <div className="blogArticleContent">
-  //             {shorten(data.tekst, 300)}
-  //           </div>
-  //           <div className="blogArticleDate">
-  //             <FontAwesomeIcon icon={faCalendarAlt} /> {data.data}
-  //             <FontAwesomeIcon icon={faExternalLinkAlt} />
-  //           </div>
-  //         </div>
-  //       </Link>
-  //     );
-  //   });
+    return (
+      <Link
+        to={slug}
+        key={d.frontmatter.title}
+        className="blogArs"
+        id={`hel${i}`}
+      >
+        <div className="blogArticle">
+          <div className="blogArticleCategory">{category}</div>
+          <div className="blogArticleHeader">{title}</div>
+          <div
+            className="blogArticleContent"
+            dangerouslySetInnerHTML={{ __html: text }}
+          ></div>
+          <div className="blogArticleDate">
+            <FontAwesomeIcon icon={faCalendarAlt} /> {date}
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </div>
+        </div>
+      </Link>
+    );
+  });
+
+  const blog2 = nodes.slice(1, 3).map((d, i) => {
+    const { category, date, title } = d.frontmatter;
+    let slug = d.fields.slug;
+    const kebab = kebabCase(d.frontmatter.category);
+    slug = `/blog/${kebab}/${slug.slice(6)}`;
+
+    const text = shorten(d.html, 300);
+
+    return (
+      <Link
+        to={slug}
+        key={d.frontmatter.title}
+        className="blogArs"
+        id={`hel${i}`}
+      >
+        <div className="blogArticle">
+          <div className="blogArticleCategory">{category}</div>
+          <div className="blogArticleHeader">{title}</div>
+          <div
+            className="blogArticleContent"
+            dangerouslySetInnerHTML={{ __html: text }}
+          ></div>
+          <div className="blogArticleDate">
+            <FontAwesomeIcon icon={faCalendarAlt} /> {date}
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </div>
+        </div>
+      </Link>
+    );
+  });
 
   return (
     <section id="blog">
@@ -119,8 +111,8 @@ function Blog() {
           </Link>
         </div>
         <div id="blogContentHeader2">najnowsze artykuły</div>
-        <div id="blogGrid">blog</div>
-        <div id="blogRes">blog2</div>
+        <div id="blogGrid">{blog}</div>
+        <div id="blogRes">{blog2}</div>
       </div>
     </section>
   );

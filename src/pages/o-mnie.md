@@ -14,3 +14,5 @@ Siłownia w której pracowałem jako jedna z pierwszych na Śląsku prowadziła 
 W tym czasie moja masa mięśniowa znacząco się zwiększyła i żeby nie stać się "sztywnym" zapisałem się do pobliskiego klubu zapaśniczego gdzie oprócz poprawienia znacząco sprawności poznałem wiele super technik treningu na wytrzymałość czy szybkość. Po jakimś czasie w moim życiu pojawiła się bardzo ważna osoba, dzięki której zmieniłem miejsce zamieszkania na Poznań. Przerwałem naukę na uczelni i wziąłem sprawy w swoje ręce, w stolicy wielkopolski trafiłem do Saturn fitness w którym pracuję do dziś jako trener. Moje doświadczenie z dnia na dzień jest większe i dzięki pracy z ludźmi mam coraz więcej przemyśleń.
 
 Powstanie tej strony to kolejny duży krok w moim rozwoju. Dzięki tej witrynie będę mógł się podzielić z znacznie wieksza iloscia osob moimi przemyśleniami i sposobami treningowymi jak i mentalnymi związanymi z treningiem. Także mam zamiar czegoś się nauczyć od osób ją odwiedzających co sprawi, że moje metody będą coraz bardziej skuteczne.
+
+![](/img/slider1.jpg)

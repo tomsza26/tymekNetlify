@@ -162,7 +162,7 @@ class Footer extends React.Component {
               <section id="footerMakedBy">
                 Projekt i Realizacja:{' '}
                 <a
-                  href="https://tomsza26.github.io/portfolio/"
+                  href="https://www.tomasz-szablewski.pl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -6,12 +6,16 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/pages/blog'
+    folder: 'src/pages/blog/blogCont'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     fields:
       - {
           label: 'Template Key',
@@ -26,6 +30,7 @@ collections:
           widget: 'datetime',
           dateFormat: 'DD.MM.YYYY',
           timeFormat: false,
+          format: 'DD.MM.YYYY',
         }
       - { label: 'Obrazek postu', name: 'featuredimage', widget: image }
       - { label: 'Treść', name: 'body', widget: 'markdown' }
@@ -57,16 +62,17 @@ collections:
           default: 'people',
         }
       - { label: 'Imię i nazwisko', name: 'title', widget: 'string' }
-      - { label: 'Data publikacji', name: 'date', widget: 'datetime' }
-      - { label: 'Opis', name: 'body', widget: 'text' }
       - {
-          label: 'Osiągnięto',
-          name: 'achieved',
-          widget: text,
+          label: 'Data publikacji',
+          name: 'date',
+          widget: 'datetime',
           dateFormat: 'DD.MM.YYYY',
           timeFormat: false,
+          format: 'DD.MM.YYYY',
         }
-      - { label: 'Czas przemiany', name: 'transformTime', widget: 'text' }
+      - { label: 'Opis', name: 'body', widget: 'text' }
+      - { label: 'Osiągnięto', name: 'achieved', widget: string }
+      - { label: 'Czas przemiany', name: 'transformTime', widget: 'string' }
       - { label: 'Obraz przed', name: 'imageBefore', widget: image }
       - { label: 'Obraz po', name: 'imageAfter', widget: image }
 
@@ -75,7 +81,7 @@ collections:
     folder: 'src/pages'
     create: false
     delete: false
-    identifier_field: Title
+    identifier_field: 'o-mnie'
     slug: '{{slug}}'
     fields:
       - {
@@ -88,11 +94,11 @@ collections:
       - { label: 'Opis', name: 'body', widget: 'markdown' }
 
   - name: 'Wspolpraca'
-    delete: false
     label: 'Współpraca'
     folder: 'src/pages'
-    identifier_field: Title
     create: false
+    delete: false
+    identifier_field: 'wspolpraca'
     slug: '{{slug}}'
     fields:
       - {

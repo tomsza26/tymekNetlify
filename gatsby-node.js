@@ -38,7 +38,6 @@ exports.createPages = ({ actions, graphql }) => {
       if (slugi.substring(0, 13) === '/metamorfozy/') {
         return;
       }
-      console.log(slugi);
 
       if (slugi.substring(0, 6) === '/blog/') {
         const kebab = _.kebabCase(edge.node.frontmatter.category);

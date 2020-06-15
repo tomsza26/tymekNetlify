@@ -4,77 +4,42 @@ import {
   faCalendarAlt,
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
+import { kebabCase } from 'lodash';
 
-function PblogNavigation() {
-  const shorten = (str, maxLen, separator = ' ') => {
-    if (str.length <= maxLen) return str;
-    return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
-  };
+import shorten from '../../assets/functions/shorten';
 
-  return (
-    <>
-      {/* {articles
-        .sort(function (a, b) {
-          return b.id - a.id;
-        })
-        .map((data, index) => {
-          let docLoc = document.location.pathname;
-          let cate = data.kategoria
-            .replace(/\s+/g, '_')
-            .replace('ą', 'a')
-            .replace('ć', 'c')
-            .replace('ó', 'o')
-            .replace(/[^\w\s]/gi, '')
-            .toLowerCase();
+function PblogNavigation(props) {
+  if (props.info.length === 0) {
+    return (
+      <h1 style={{ textAlign: 'center' }}>
+        Brak artykułów w podanej kategorii.
+      </h1>
+    );
+  }
+  const items = props.info.map((d) => {
+    const { title, category, featuredimage, date } = d.frontmatter;
+    let slug = d.fields.slug;
+    const kebab = kebabCase(category);
+    slug = `/blog/${kebab}/${slug.slice(6)}`;
 
-          if (docLoc === '/blog') {
-            return (
-              <a
-                href={`/blog/${cate}/${data.id}`}
-                className="PblogArticle"
-                key={index}
-              >
-                <div className="PblogCategory">{data.kategoria}</div>
-                <div className="PblogHeader">{data.nazwa}</div>
-                <img
-                  src={require(`../content/articleImages/${data.obraz}`)}
-                  alt="articleP"
-                  className="PblogImg"
-                />
-                <div className="PblogText">{this.shorten(data.tekst, 400)}</div>
-                <div className="PblogDateCont">
-                  <FontAwesomeIcon icon={faCalendarAlt} /> {data.data}
-                  <FontAwesomeIcon icon={faExternalLinkAlt} />
-                </div>
-              </a>
-            );
-          } else if (cate === docLoc.substring(docLoc.indexOf('/') + 6)) {
-            return (
-              <a
-                href={`/blog/${cate}/${data.id}`}
-                className="PblogArticle"
-                key={index}
-              >
-                <div className="PblogCategory">{data.kategoria}</div>
-                <div className="PblogHeader">{data.nazwa}</div>
-                <img
-                  src={require(`../content/articleImages/${data.obraz}`)}
-                  alt="articleP"
-                  className="PblogImg"
-                />
-                <div className="PblogText">{this.shorten(data.tekst, 400)}</div>
-                <div className="PblogDateCont">
-                  <FontAwesomeIcon icon={faCalendarAlt} /> {data.data}
-                  <FontAwesomeIcon icon={faExternalLinkAlt} />
-                </div>
-              </a>
-            );
-          } else {
-            return '';
-          }
-        })} */}
-    </>
-  );
+    const text = shorten(d.html, 400);
+
+    return (
+      <Link to={slug} className="PblogArticle" key={title}>
+        <div className="PblogCategory">{category}</div>
+        <div className="PblogHeader">{title}</div>
+        <img src={featuredimage} alt="articleP" className="PblogImg" />
+        <div className="PblogText" dangerouslySetInnerHTML={{ __html: text }} />
+        <div className="PblogDateCont">
+          <FontAwesomeIcon icon={faCalendarAlt} /> {date}
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </div>
+      </Link>
+    );
+  });
+
+  return <>{items}</>;
 }
 
 export default PblogNavigation;
