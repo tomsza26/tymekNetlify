@@ -6,6 +6,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: 'tomato',
+        showSpinner: true,
+      },
+    },
     // {
     //   resolve: 'gatsby-plugin-layout',
     //   options: {
