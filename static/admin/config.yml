@@ -74,7 +74,7 @@ collections:
       - { label: 'Osiągnięto', name: 'achieved', widget: string }
       - { label: 'Czas przemiany', name: 'transformTime', widget: 'string' }
       - { label: 'Obraz przed', name: 'imageBefore', widget: image }
-      - { label: 'Obraz po', name: 'imageAfte', widget: image }
+      - { label: 'Obraz po', name: 'imageAfter', widget: image }
 
   - name: 'oMnie'
     label: 'O Mnie'
