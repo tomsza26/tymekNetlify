@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Pakuj z Tymkiem',
+    description: 'Siema, mam na imię Tymek i pomogę zdobyć ci wymarzoną formę!',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

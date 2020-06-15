@@ -14,26 +14,6 @@ class Footer extends React.Component {
       status: '',
     };
   }
-
-  submitForm(ev) {
-    ev.preventDefault();
-    const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        this.setState({ status: 'SUCCESS' });
-      } else {
-        this.setState({ status: 'ERROR' });
-      }
-    };
-    xhr.send(data);
-  }
-
   render() {
     const { status } = this.state;
     return (
@@ -99,7 +79,7 @@ class Footer extends React.Component {
                   minLength="10"
                   required
                 />
-                <button type="button">wyślij</button>
+                <button>wyślij</button>
               </form>
             )}
             {status === 'ERROR' && (
@@ -174,6 +154,25 @@ class Footer extends React.Component {
         </div>
       </footer>
     );
+  }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: 'SUCCESS' });
+      } else {
+        this.setState({ status: 'ERROR' });
+      }
+    };
+    xhr.send(data);
   }
 }
 
