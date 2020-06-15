@@ -5,11 +5,11 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import Header from './index/Heading';
-import Footer from './index/Footer';
+import Header from '../components/index/Heading';
+import Footer from '../components/index/Footer';
 
-import useSiteMetadata from './SiteMetadata';
-import './App.scss';
+import useSiteMetadata from '../components/SiteMetadata';
+import '../components/App.scss';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();

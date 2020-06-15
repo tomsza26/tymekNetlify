@@ -13,12 +13,12 @@ module.exports = {
         showSpinner: true,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-layout',
-    //   options: {
-    //     path: 'src/components/layout.js',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        path: './src/layouts/index.js',
+      },
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
