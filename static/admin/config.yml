@@ -13,7 +13,7 @@ slug:
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/pages/blog/blogCont'
+    folder: 'src/pages/blog'
     create: true
     slug: '{{slug}}'
     fields:
