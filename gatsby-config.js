@@ -7,6 +7,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-159583293-1',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-nprogress',
       options: {
         color: 'tomato',
