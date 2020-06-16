@@ -95,7 +95,7 @@ function Blog(props) {
           <Link to="/blog/trening#navContainer">
             <div className="blogButton">trening</div>
           </Link>
-          <Link to="/blog/jak_zaczac#navContainer">
+          <Link to="/blog/jak-zaczac#navContainer">
             <div className="blogButton" id="blogStart">
               jak zacząć?
             </div>
@@ -103,10 +103,10 @@ function Blog(props) {
           <Link to="/blog/ciekawostki#navContainer">
             <div className="blogButton">ciekawostki</div>
           </Link>
-          <Link to="/blog/rozwoj_osobisty#navContainer">
+          <Link to="/blog/rozwoj-osobisty#navContainer">
             <div className="blogButton">rozwój osobisty</div>
           </Link>
-          <Link to="/blog/plany_treningowe#navContainer">
+          <Link to="/blog/plany-treningowe#navContainer">
             <div className="blogButton">plany treningowe</div>
           </Link>
         </div>

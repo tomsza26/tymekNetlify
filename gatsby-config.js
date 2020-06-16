@@ -19,6 +19,8 @@ module.exports = {
         path: './src/layouts/index.js',
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
@@ -27,7 +29,19 @@ module.exports = {
         name: 'pages',
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
+    },
     'gatsby-plugin-netlify-cms',
   ],
 };
